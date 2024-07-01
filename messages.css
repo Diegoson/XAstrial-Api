@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1c1c1c;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ff4081;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #1c1c1c, #262626);
+    box-shadow: 5px 5px 15px #000000, -5px -5px 15px #2a2a2a;
+}
+
+.messages {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.sent-message {
+    background-color: #164f39;
+    box-shadow: 0 0 10px #164f39, 0 0 20px #164f39, 0 0 40px #164f39;
+}
+
+.replied-message {
+    background-color: #5c1a1a;
+    box-shadow: 0 0 10px #5c1a1a, 0 0 20px #5c1a1a, 0 0 40px #5c1a1a;
+}
+
+.message strong {
+    color: #ffffff;
+}
+
+.message span {
+    color: #ffffff;
+    display: block;
+    margin-top: 5px;
+}
+
+.message p {
+    margin: 10px 0;
+}
+
+.message-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.username-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.message-input {
+    width: calc(100% - 120px); 
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.submit-button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #ff4081;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 5px 5px 15px #000000, -5px -5px 15px #2a2a2a;
+}
+
+.submit-button:hover {
+    background-color: #e04070;
+    transform: scale(1.05);
+}
+
+.reply-btn {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: none;
+    background-color: #4a4a4a;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 3px 3px 8px #000000, -3px -3px 8px #666666;
+}
+
+.reply-btn:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+.reactions {
+    display: flex;
+    align-items: center;
+}
+
+.reaction {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.reaction:hover {
+    transform: scale(1.2);
+    color: #ff4081;
+  }
+  
