@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Chat Room</h1>
+    </header>
+    
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            <!-- Messages -->
+        </div>
+        
+        <div class="message-actions">
+            <input type="text" id="username" class="username-input" placeholder="Enter your username">
+        </div>
+        
+        <div class="message-actions">
+            <input type="text" id="message" class="message-input" placeholder="Write your message">
+            <button class="submit-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+          </html>
+          
