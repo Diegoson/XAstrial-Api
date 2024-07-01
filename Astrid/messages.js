@@ -68,7 +68,7 @@ async function sendMessage() {
             fetchAndDisplayMessages();
 
         } catch (error) {
-            console.error('Error sending message:', error);
+            console.error(error);
             alert('Please try again.');
         }
 
