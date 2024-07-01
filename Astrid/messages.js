@@ -1,3 +1,7 @@
+/*
+    @Diegoson
+*/
+
 async function fetchAndDisplayMessages() {
     try {
         const response = await fetch('/api/messages');
@@ -56,7 +60,7 @@ async function sendMessage() {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                throw new Error('error messages');
             }
 
             document.getElementById('message').value = '';
@@ -113,8 +117,8 @@ async function sendReply(btn) {
             btn.parentElement.style.display = 'none';
 
         } catch (error) {
-            console.error('Error sending reply:', error);
-            alert('Failed to send reply. Please try again.');
+            console.error(error);
+            alert('Please try again');
         }
     } else {
         alert('Please enter your reply.');
