@@ -5,9 +5,11 @@ const authenticate = require('./middleware/authenticate');
 const User = require('./models/user');
 const userRoutes = require('./routes/user');
 const generateApiKey = require('./utils/generateApiKey');
+const config = require('./config.js');
+const MONGO_URL = config.MONGODB;
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/yourDatabaseName', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.json());
 
 app.use('/api', userRoutes);
