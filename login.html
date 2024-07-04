@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <style>
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000; /* Black background */
+      color: #ffffff; /* White text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      width: 400px;
+      max-width: 100%;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 32px;
+      color: #55ff55; /* Bright green neon */
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      position: relative;
+      animation: neonGlow 1.5s infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      0% {
+        text-shadow: 0 0 10px #55ff55, 0 0 20px #55ff55, 0 0 30px #55ff55;
+      }
+      100% {
+        text-shadow: 0 0 5px #55ff55, 0 0 15px #55ff55, 0 0 25px #55ff55;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    label {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #99ccff; /* Bright blue neon */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+      color: #ffffff; /* White text */
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Neon blue glow */
+      transition: box-shadow 0.3s ease;
+      width: calc(100% - 24px);
+      text-align: center;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Brighter neon blue glow on focus */
+    }
+
+    button {
+      background-color: #33ccff; /* Bright blue */
+      color: #ffffff; /* White text */
+      border: none;
+      padding: 14px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0099ff; /* Darker shade of blue on hover */
+      transform: scale(1.05); /* Scale up on hover */
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .input-icon {
+      position: absolute;
+      top: 14px;
+      left: 10px;
+      color: #ffffff;
+    }
+
+    .signup-link {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #55ff55; 
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .signup-link:hover {
+      color: #33ff33; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>User Login</h2>
+    <!-- Login Form -->
+    <form id="loginForm" action="/api/login" method="POST">
+      <div class="form-group">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" name="username" placeholder="Enter username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter password" required>
+      </div>
+
+      <button type="submit">Login</button>
+      <a href="/signup.html" class="signup-link">Don't have an account? Sign up here</a>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
