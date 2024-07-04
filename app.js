@@ -14,7 +14,7 @@ app.use('/api', userRoutes);
 
 app.get('/api/search/yt', authenticate, async (req, res) => {
   const query = req.query.query;
-  let apiKey = req.query.api_key; // Assuming API key is sent as a query parameter
+  let apiKey = req.query.api_key;
 
   if (!query) {
     return res.status(400).json({ error: 'Query parameter "query" is required' });
