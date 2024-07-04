@@ -17,3 +17,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('username', signupUsername);
       localStorage.setItem('password', signupPassword);
+      window.location.href = '/index.html';
+
+  document.getElementById('loginForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const formData = {
+    username: document.getElementById('loginUsername').value,
+    password: document.getElementById('loginPassword').value
+  };
+
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) {
+      throw new Error('Login error');
+    }
+
+    alert('Login successful!');
+    window.location.href = '/index.html';
+
+  } catch (error) {
+    console.error(error);
+    alert('Login error. Please check your username and password.');
+  }
+});
+
+          
+                                                           
