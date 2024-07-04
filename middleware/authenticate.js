@@ -1,4 +1,4 @@
-const User = require('./models/user');
+const User = require('../models/user');
 
 const authenticate = async (req, res, next) => {
   const apiKey = req.header('Authorization')?.split(' ')[1];
