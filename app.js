@@ -48,7 +48,7 @@ app.get('/api/google', authenticate, async (req, res) => {
     }
 
   const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-  res.redirect(url);
+  res.redirect(url, api_key: api_key);
 });
 
 const PORT = process.env.PORT || 3000;
