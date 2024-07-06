@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.use('/api', userRoutes);
 
-app.get('/api/search/yt', authenticate, async (req, res) => {
+app.get('/api/yt-search', authenticate, async (req, res) => {
   const query = req.query.query;
   let apiKey = req.query.api_key;
 
@@ -32,6 +32,23 @@ app.get('/api/search/yt', authenticate, async (req, res) => {
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }
+});
+
+app.get('/api/google', authenticate, async (req, res) => {
+  const query = req.query.query;
+  let apiKey = req.query.api_key;
+
+  if (!query) {
+    return res.status(400).send({ error: 'Missing search query' });
+  }
+
+  try {
+    if (!apiKey || apiKey !== 'Diegoson') {
+      apiKey = generateApiKey();       
+    }
+
+  const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  res.redirect(url);
 });
 
 const PORT = process.env.PORT || 3000;
