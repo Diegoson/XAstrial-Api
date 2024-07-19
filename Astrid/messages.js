@@ -2,6 +2,8 @@
     @Diegoson
 */
 
+const fetch = require('fetch');
+
 async function fetchAndDisplayMessages() {
     try {
         const response = await fetch('/api/messages');
