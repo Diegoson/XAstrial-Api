@@ -24,6 +24,41 @@ router.get('/search/google', async (req, res) => {
   }
 });
 
+const GITHUB_API_URL = 'https://api.github.com/users/';
+router.get('/github/user/:username', async (req, res) => {
+    const username = req.params.username;
+    const url = `${GITHUB_API_URL}${username}`;
+
+    try {
+        const response = await axios.get(url);
+
+        const data = response.data;
+        res.json({
+            apiOwner: config.NAME,
+            login: data.login,
+            id: data.id,
+            avatar_url: data.avatar_url,
+            html_url: data.html_url,
+            name: data.name,
+            company: data.company,
+            blog: data.blog,
+            location: data.location,
+            email: data.email,
+            bio: data.bio,
+            public_repos: data.public_repos,
+            followers: data.followers,
+            following: data.following,
+            created_at: data.created_at,
+        });
+    } catch (error) {
+        if (error.response && error.response.status === 404) {
+            res.status(404).json({ error: 'User not found' });
+        } else {
+            res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+});
+                                     
 router.get('/lyrics/:title/:artist', async (req, res) => {
   try {
     const { title, artist } = req.params;
