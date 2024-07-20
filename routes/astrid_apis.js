@@ -3,6 +3,7 @@ const axios = require('axios');
 const app = express();
 const router = express.Router();
 const config = require('../config.json');
+app.use(express.json());
 
 router.get('/search/google', async (req, res) => {
   const { q } = req.query;
@@ -24,8 +25,21 @@ router.get('/search/google', async (req, res) => {
   }
 });
 
+app.get('/downloader/instagram/:url', async (req, res) => {
+  const url = req.params.url;
+  try {
+    const result = await instagram(url);
+    res.json({
+      data: result,
+      apiOwner: config.NAME,
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 const GITHUB_API_URL = 'https://api.github.com/users/';
-router.get('/github/user/:username', async (req, res) => {
+router.get('/stalker/github/user/:username', async (req, res) => {
     const username = req.params.username;
     const url = `${GITHUB_API_URL}${username}`;
 
