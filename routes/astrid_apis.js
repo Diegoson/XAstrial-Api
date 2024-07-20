@@ -38,7 +38,7 @@ router.get('/downloader/instagram/:url', async (req, res) => {
   }
 });
 
-app.get('/search/playstore/:search', async (req, res) => {
+router.get('/search/playstore/:search', async (req, res) => {
   const search = req.params.search;
   try {
     const result = await PlayStore(search);
