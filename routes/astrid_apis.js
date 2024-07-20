@@ -25,13 +25,26 @@ router.get('/search/google', async (req, res) => {
   }
 });
 
-app.get('/downloader/instagram/:url', async (req, res) => {
+router.get('/downloader/instagram/:url', async (req, res) => {
   const url = req.params.url;
   try {
     const result = await instagram(url);
     res.json({
       data: result,
       apiOwner: config.NAME,
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/search/playstore/:search', async (req, res) => {
+  const search = req.params.search;
+  try {
+    const result = await PlayStore(search);
+    res.json({
+      data: result.data,
+      apiOwner: config.NAME
     });
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
