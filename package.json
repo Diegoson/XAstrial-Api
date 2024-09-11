@@ -2,13 +2,13 @@
   "name": "XAstrial",
   "version": "3.0.0",
   "description": "Diegoson",
-  "main": "index.js",
+  "main": "x_astrial/server.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "start": "node server.js",
-    "node": "nodemon server.js"
+    "start": "node x_astrial/server.js",
+    "node": "nodemon x_astrial/server.js"
   },
   "author": "Diegoson",
     "dependencies": {
