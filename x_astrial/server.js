@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const owner_name = 'XAstrial';
 const fb_dl = require('./function').fb_dl;
-app.get('/api/fb_dl', async (req, res) => {
+app.get('/api/download/fb_dl', async (req, res) => {
     const url = req.query.url;
     if (!url) {
         return res.status(400).json({ error: 'url parameter is required' });
